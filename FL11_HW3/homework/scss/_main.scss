@@ -1,0 +1,282 @@
+$font-weights: ("regular": 600, "bold": 700);
+
+@mixin logo-item {
+    display: flex;
+    padding-top: 2.6rem;
+    padding-left: 14.3rem;
+    font-family: $fontSecondary;
+
+    img {
+        height: 5.5rem;
+    }
+
+    p {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1.7rem;
+        margin-top: .6rem;
+        font-size: 3rem;
+        font-weight: map-get($font-weights, "bold");
+        line-height: 2.5rem;
+    }
+    
+    span {
+        font-size: 1.3rem;
+        margin: 0 auto;
+        letter-spacing: -.3px;
+        padding-bottom: 1rem;
+    }
+}
+
+@mixin button($top, $right, $bottom, $left) {
+    &,
+    &:link,
+    &:visited {
+        text-decoration: none;
+        padding: 1.8rem 5rem;
+        margin: $top $right $bottom $left;
+        border-radius: .5rem;
+        border-radius: .3rem;
+        position: relative;
+        font-weight: map-get($font-weights, "bold");
+        font-size: 1.8rem;
+        color: $white;
+        background-color: $buttonColor;
+        transition: all .2s;
+
+        border: none;
+        cursor: pointer;
+    }
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 1rem rgba($titleColor, .4);
+        background-color: lighten($buttonColor, 10%);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    position: relative;
+    background-color: $backgroundColor;
+}
+
+.header-wrap {
+    background-image: $headerImage;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 107vh;
+    width: 100%;
+    clip-path: inset(0 0 round 0 0 40%);
+    color: $titleColor;
+
+    .landing-logo {
+        @include logo-item;
+    }
+    
+    .header_heading {
+        position: relative;
+        font-size: 8rem;
+        font-weight: map-get($font-weights, "bold");
+        margin-left: 14rem;
+        margin-top: 7.8rem;
+        padding-right: 75rem;
+        line-height: 8rem;
+        overflow-wrap: break-word;
+        z-index: 10;
+    
+        &::before {
+            content: "";
+            color: transparent;
+            border-bottom: 3rem solid $underlineColor;
+            width: 33.5rem;
+            position: absolute;
+            margin-top: 13.2rem;
+            z-index: -1;
+        }
+    }
+    
+    .header_text {
+        margin-top: 3.2rem;
+        margin-left: 9.3rem;
+        font-size: 1.8rem;
+        line-height: 3rem;
+        letter-spacing: 0.25px;
+        font-family: $fontSecondary;
+        white-space: pre;
+    }
+    
+    .header_button {
+        @include button(5.5rem, 14.2rem, 5.5rem, 14.2rem);
+    }    
+}
+
+.section_text {
+    letter-spacing: 1.2px;
+    margin: 4.5rem auto;
+    text-align: center;
+    color: $titleColor;
+    font-size: 5rem;
+    font-weight: map-get($font-weights, "regular");
+    z-index: 10;
+
+    &::before {
+        content: "";
+        color: transparent;
+        border-bottom: 1.7rem solid $underlineColor;
+        position: absolute;
+        width: 23.5rem;
+        margin-top: 3.5rem;
+        margin-left: 27rem;
+        z-index: -1;
+    }
+}
+
+.section_card_wrap {
+    display: flex;
+    justify-content: center;
+
+    .section_card {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: 0.5rem 1rem;
+        height: 50rem;
+        width: 43rem;
+        background-color: $mainColor;
+        color: $white;
+        padding: 2rem;
+        border-radius: 1rem;
+
+        .section_card_img {
+            height: 25rem;
+            border-radius: 1rem;
+        }
+
+        .section_card_heading {
+            position: relative;
+            margin: 1.3rem auto;
+            font-size: 2.5rem;
+            font-weight: 600;
+            z-index: 10;
+
+            .section_card_underline {
+                position: absolute;
+                width: 100%;
+                margin-top: -1.4rem;
+                border-bottom: 1.5rem solid $underlineColor;
+                z-index: -1;
+            }
+        }
+    }
+
+    .section_card_text {
+        font-size: 1.8rem;
+        font-family: $fontSecondary;    
+        margin-top: 1rem;
+        line-height: 2.5rem;
+        text-align: center;
+        color: $textSecondary;
+    }
+}
+
+.section_banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(45deg, $gradientLeftColor, $gradientRightColor);
+    width: 60%;
+    height: 15rem;
+    border-radius: .5rem;
+    margin: 0 auto;
+    margin-top: 15rem;
+    z-index: 10;
+
+    .section_banner_heading {
+        font-size: 3rem;
+        font-weight: map-get($font-weights, "bold");
+        margin-left: 10rem;
+        color: $titleColor;
+
+        &:before {
+            content: "";
+            color: transparent;
+            border-bottom: 1.7rem solid $underlineColor;
+            position: absolute;
+            width: 6.5rem;
+            margin-top: 2rem;
+            margin-left: 12rem;
+            z-index: -1;
+        }
+    }
+
+    .section_banner_text {
+        font-size: 1.6rem;
+        color: $textSecondary;
+        font-family: $fontSecondary;    
+        padding: 1rem 0;
+        margin-left: 10rem;
+    }
+
+    .section_banner_button {
+        @include button(7.5rem, 12rem, 7.5rem, 3rem);
+    }
+}
+
+footer {
+    margin-top: -7rem;
+    z-index: 1;
+    font-family: $fontSecondary;    
+
+    .footer-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $mainColor;
+        position: absolute;
+        height: 30rem;
+        width: 100%;
+        color: $textSecondary;
+      
+        .footer_logo {
+            @include logo-item;
+            padding: 0;
+            margin-top: 10rem;
+            margin-left: 16rem;
+        }
+        
+        .footer-cr {
+            font-size: 1.6rem;
+            margin-top: 9rem;
+            margin-right: 16rem;
+        }
+
+        .footer_text {
+            @extend .footer-cr;
+            width: 21%;
+            margin-right: 0;
+        }
+    }
+    
+}

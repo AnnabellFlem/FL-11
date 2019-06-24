@@ -1,0 +1,245 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  font-family: 'Source Sans Pro', sans-serif; }
+
+body {
+  box-sizing: border-box;
+  position: relative;
+  background-color: #21232e; }
+
+.header-wrap {
+  background-image: url(../img/m-h-night.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 107vh;
+  width: 100%;
+  clip-path: inset(0 0 round 0 0 40%);
+  color: #fff; }
+  .header-wrap .landing-logo {
+    display: flex;
+    padding-top: 2.6rem;
+    padding-left: 14.3rem;
+    font-family: "Fresca", sans-serif; }
+    .header-wrap .landing-logo img {
+      height: 5.5rem; }
+    .header-wrap .landing-logo p {
+      display: flex;
+      flex-direction: column;
+      margin-left: 1.7rem;
+      margin-top: .6rem;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 2.5rem; }
+    .header-wrap .landing-logo span {
+      font-size: 1.3rem;
+      margin: 0 auto;
+      letter-spacing: -.3px;
+      padding-bottom: 1rem; }
+  .header-wrap .header_heading {
+    position: relative;
+    font-size: 8rem;
+    font-weight: 700;
+    margin-left: 14rem;
+    margin-top: 7.8rem;
+    padding-right: 75rem;
+    line-height: 8rem;
+    overflow-wrap: break-word;
+    z-index: 10; }
+    .header-wrap .header_heading::before {
+      content: "";
+      color: transparent;
+      border-bottom: 3rem solid #ff4e33;
+      width: 33.5rem;
+      position: absolute;
+      margin-top: 13.2rem;
+      z-index: -1; }
+  .header-wrap .header_text {
+    margin-top: 3.2rem;
+    margin-left: 9.3rem;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    letter-spacing: 0.25px;
+    font-family: "Fresca", sans-serif;
+    white-space: pre; }
+  .header-wrap .header_button, .header-wrap .header_button:link, .header-wrap .header_button:visited {
+    text-decoration: none;
+    padding: 1.8rem 5rem;
+    margin: 5.5rem 14.2rem 5.5rem 14.2rem;
+    border-radius: .5rem;
+    border-radius: .3rem;
+    position: relative;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #fff;
+    background-color: #e3ac00;
+    transition: all .2s;
+    border: none;
+    cursor: pointer; }
+  .header-wrap .header_button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 1rem rgba(255, 255, 255, 0.4);
+    background-color: #ffc717; }
+    .header-wrap .header_button:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+
+.section_text {
+  letter-spacing: 1.2px;
+  margin: 4.5rem auto;
+  text-align: center;
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 600;
+  z-index: 10; }
+  .section_text::before {
+    content: "";
+    color: transparent;
+    border-bottom: 1.7rem solid #ff4e33;
+    position: absolute;
+    width: 23.5rem;
+    margin-top: 3.5rem;
+    margin-left: 27rem;
+    z-index: -1; }
+
+.section_card_wrap {
+  display: flex;
+  justify-content: center; }
+  .section_card_wrap .section_card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0.5rem 1rem;
+    height: 50rem;
+    width: 43rem;
+    background-color: #3b3f50;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 1rem; }
+    .section_card_wrap .section_card .section_card_img {
+      height: 25rem;
+      border-radius: 1rem; }
+    .section_card_wrap .section_card .section_card_heading {
+      position: relative;
+      margin: 1.3rem auto;
+      font-size: 2.5rem;
+      font-weight: 600;
+      z-index: 10; }
+      .section_card_wrap .section_card .section_card_heading .section_card_underline {
+        position: absolute;
+        width: 100%;
+        margin-top: -1.4rem;
+        border-bottom: 1.5rem solid #ff4e33;
+        z-index: -1; }
+  .section_card_wrap .section_card_text {
+    font-size: 1.8rem;
+    font-family: "Fresca", sans-serif;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+    text-align: center;
+    color: #d1d1d1; }
+
+.section_banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-image: linear-gradient(45deg, #e3ac00, #922b53);
+  width: 60%;
+  height: 15rem;
+  border-radius: .5rem;
+  margin: 0 auto;
+  margin-top: 15rem;
+  z-index: 10; }
+  .section_banner .section_banner_heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-left: 10rem;
+    color: #fff; }
+    .section_banner .section_banner_heading:before {
+      content: "";
+      color: transparent;
+      border-bottom: 1.7rem solid #ff4e33;
+      position: absolute;
+      width: 6.5rem;
+      margin-top: 2rem;
+      margin-left: 12rem;
+      z-index: -1; }
+  .section_banner .section_banner_text {
+    font-size: 1.6rem;
+    color: #d1d1d1;
+    font-family: "Fresca", sans-serif;
+    padding: 1rem 0;
+    margin-left: 10rem; }
+  .section_banner .section_banner_button, .section_banner .section_banner_button:link, .section_banner .section_banner_button:visited {
+    text-decoration: none;
+    padding: 1.8rem 5rem;
+    margin: 7.5rem 12rem 7.5rem 3rem;
+    border-radius: .5rem;
+    border-radius: .3rem;
+    position: relative;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #fff;
+    background-color: #e3ac00;
+    transition: all .2s;
+    border: none;
+    cursor: pointer; }
+  .section_banner .section_banner_button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 1rem rgba(255, 255, 255, 0.4);
+    background-color: #ffc717; }
+    .section_banner .section_banner_button:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+
+footer {
+  margin-top: -7rem;
+  z-index: 1;
+  font-family: "Fresca", sans-serif; }
+  footer .footer-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3b3f50;
+    position: absolute;
+    height: 30rem;
+    width: 100%;
+    color: #d1d1d1; }
+    footer .footer-wrap .footer_logo {
+      display: flex;
+      padding-top: 2.6rem;
+      padding-left: 14.3rem;
+      font-family: "Fresca", sans-serif;
+      padding: 0;
+      margin-top: 10rem;
+      margin-left: 16rem; }
+      footer .footer-wrap .footer_logo img {
+        height: 5.5rem; }
+      footer .footer-wrap .footer_logo p {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1.7rem;
+        margin-top: .6rem;
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 2.5rem; }
+      footer .footer-wrap .footer_logo span {
+        font-size: 1.3rem;
+        margin: 0 auto;
+        letter-spacing: -.3px;
+        padding-bottom: 1rem; }
+    footer .footer-wrap .footer-cr, footer .footer-wrap .footer_text {
+      font-size: 1.6rem;
+      margin-top: 9rem;
+      margin-right: 16rem; }
+    footer .footer-wrap .footer_text {
+      width: 21%;
+      margin-right: 0; }
