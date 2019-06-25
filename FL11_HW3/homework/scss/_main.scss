@@ -19,7 +19,7 @@ $font-weights: ("regular": 600, "bold": 700);
         font-weight: map-get($font-weights, "bold");
         line-height: 2.5rem;
     }
-    
+
     span {
         font-size: 1.3rem;
         margin: 0 auto;
@@ -29,6 +29,7 @@ $font-weights: ("regular": 600, "bold": 700);
 }
 
 @mixin button($top, $right, $bottom, $left) {
+
     &,
     &:link,
     &:visited {
@@ -47,7 +48,7 @@ $font-weights: ("regular": 600, "bold": 700);
         border: none;
         cursor: pointer;
     }
-    
+
     &:hover {
         transform: translateY(-3px);
         box-shadow: 0 1rem 1rem rgba($titleColor, .4);
@@ -93,7 +94,7 @@ body {
     .landing-logo {
         @include logo-item;
     }
-    
+
     .header_heading {
         position: relative;
         font-size: 8rem;
@@ -104,7 +105,7 @@ body {
         line-height: 8rem;
         overflow-wrap: break-word;
         z-index: 10;
-    
+
         &::before {
             content: "";
             color: transparent;
@@ -115,7 +116,7 @@ body {
             z-index: -1;
         }
     }
-    
+
     .header_text {
         margin-top: 3.2rem;
         margin-left: 9.3rem;
@@ -125,10 +126,10 @@ body {
         font-family: $fontSecondary;
         white-space: pre;
     }
-    
+
     .header_button {
         @include button(5.5rem, 14.2rem, 5.5rem, 14.2rem);
-    }    
+    }
 }
 
 .section_text {
@@ -192,7 +193,7 @@ body {
 
     .section_card_text {
         font-size: 1.8rem;
-        font-family: $fontSecondary;    
+        font-family: $fontSecondary;
         margin-top: 1rem;
         line-height: 2.5rem;
         text-align: center;
@@ -234,7 +235,7 @@ body {
     .section_banner_text {
         font-size: 1.6rem;
         color: $textSecondary;
-        font-family: $fontSecondary;    
+        font-family: $fontSecondary;
         padding: 1rem 0;
         margin-left: 10rem;
     }
@@ -247,7 +248,7 @@ body {
 footer {
     margin-top: -7rem;
     z-index: 1;
-    font-family: $fontSecondary;    
+    font-family: $fontSecondary;
 
     .footer-wrap {
         display: flex;
@@ -258,14 +259,14 @@ footer {
         height: 30rem;
         width: 100%;
         color: $textSecondary;
-      
+
         .footer_logo {
             @include logo-item;
             padding: 0;
             margin-top: 10rem;
             margin-left: 16rem;
         }
-        
+
         .footer-cr {
             font-size: 1.6rem;
             margin-top: 9rem;
@@ -278,5 +279,5 @@ footer {
             margin-right: 0;
         }
     }
-    
+
 }
