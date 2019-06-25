@@ -87,7 +87,7 @@ body {
     background-repeat: no-repeat;
     height: 107vh;
     width: 100%;
-    clip-path: inset(0 0 round 0 0 40%);
+    border-radius: 0 0 40% 0;
     color: $titleColor;
 
     .landing-logo {
