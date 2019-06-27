@@ -142,7 +142,7 @@ body {
 .section-articles {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 10rem, repeat(6, 1fr);
+    grid-template-rows: 10rem repeat(6, 1fr);
     grid-template-areas: 
         'header header'
         'img1 section1'
@@ -317,8 +317,7 @@ body {
     font-size: 1.7rem;
     color: #fff;
     background-color: #097774;
-    transition: all .2s;
-
+    
     border: none;
     cursor: pointer;
 }
@@ -354,7 +353,6 @@ body {
     font-size: 1.7rem;
     border: 2px solid #000;
     background-color: #F3F3F3;
-    transition: all .2 ease;
 }
 
 #email:focus {
