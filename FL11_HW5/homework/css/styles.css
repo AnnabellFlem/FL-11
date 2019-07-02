@@ -155,7 +155,7 @@ body {
   color: rgba(255, 255, 255, .5);
 }
 
-.blog-item time {
+.blog-item .date {
   position: absolute;
   top: 0;
   right: 0;
@@ -166,19 +166,19 @@ body {
   color: rgba(255, 255, 255, .3);
 }
 
-.blog-item:nth-child(even) time {
+.blog-item:nth-child(even) .date {
   left: 0;
   text-align: left;
   padding-left: 1rem;
 }
 
-.blog-item span {
+.blog-item .month {
   display: block;
   font-size: 2.5rem;
   text-align: center;
 }
 
-.blog-item:nth-child(even) span {
+.blog-item:nth-child(even) .month {
   text-align: left;
 }
 
@@ -312,8 +312,8 @@ body {
     width: 100%;
   }
 
-  .blog-item time,
-  .blog-item:nth-child(even) time {
+  .blog-item .date,
+  .blog-item:nth-child(even) .date {
     position: relative;
     padding-right: 0;
     padding-left: 0;
@@ -336,7 +336,7 @@ body {
     line-height: 6rem;
   }
 
-  .blog-item:nth-child(even) span {
+  .blog-item:nth-child(even) .month {
     text-align: center;
   }
 
