@@ -1,47 +1,95 @@
 function getNumbers(string) {
-  let regex = /\d/g;
-  let result = string.match(regex);
-  if (result) {
-    return result;
-  } else {
-    return [];
+  const regex = /\d/g;
+  let result = string.match(regex) || [];
+
+  for (let i = 0; i < result.length; i++) {
+    result[i] = +result[i];
   }
-}; 
 
-//console.log(getNumbers('string')); // returns [] 
-//console.log(getNumbers('n1um3ber95')); // returns [1,3,9,5] 
+  return result;
+}
+
+function findTypes(...args) {
+  const types = [];
+
+  for (let i = 0; i < args.length; i++) {
+    let type = typeof args[i];
+    types[type] = (types[type] || 0) + 1;
+  }
+  return types;
+}
 
 
+function executeforEach(arr, func) {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = func(arr[i]);
+  }
+}
+
+function mapArray(arr, func) {
+  executeforEach(arr, func);
+  return arr;
+}
+
+function filterArray(arr, func) {
+  const src = [...arr];
+  const result = [];
+  executeforEach(arr, func);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      result.push(src[i]);
+    }
+  }
+  return result;
+}
 
 function showFormattedDate(date) {
-    const day = date.getDate();
-    const year = date.getFullYear();
-    Date.shortMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-   
-    return `Date: ${Date.shortMonths[date.getMonth()]} ${day} ${year}`;
-   }
-   
-   console.log(showFormattedDate(new Date('2019-01-27T01:10:00')));
+  const day = date.getDate();
+  const year = date.getFullYear();
+  Date.shortMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-   function canConvertToDate(string) {
-    let parseDate = Date.parse(string);
-    if (isNaN(parseDate)) {
-      return false;
-    }  else {
-      return true;
+  return `Date: ${Date.shortMonths[date.getMonth()]} ${day} ${year}`;
+}
+
+function canConvertToDate(string) {
+  const parseDate = Date.parse(string);
+  return !isNaN(parseDate);
+}
+
+function daysBetween(date1, date2) {
+  const diffTime = Math.abs(Date.parse(date2) - Date.parse(date1));
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  return diffDays;
+}
+
+function getAmountOfAdultPeople(data) {
+  const now = new Date();
+  const age = 18;
+  const leapdays = age / 4;
+
+  const a = filterArray(data, function (el) {
+    return daysBetween(now, el.birthday) > 365 * age + leapdays;
+  });
+
+  return a.length;
+}
+
+function keys(obj) {
+  const result = [];
+  for (let o in obj) {
+    if (obj.hasOwnProperty(o)) {
+      result.push(o);
     }
-    //return false ? isNaN(parseDate) : true
   }
-  
-  console.log(canConvertToDate('2016-13-18T00:00:00')); // false
-  console.log(canConvertToDate('2016-03-18T00:00:00')); // true
+  return result;
+}
 
-  
-  function daysBetween(date1, date2) {
-    const diffTime = Math.abs(date2.getTime() - date1.getTime());
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
-    return diffDays;
+function values(obj) {
+  const result = [];
+  for (let o in obj) {
+    if (obj.hasOwnProperty(o)) {
+      result.push(obj[o]);
     }
-    
-    console.log(daysBetween(new Date('2016-03-18T00:00:00'), new Date('2016-04-19T00:00:00')));  // 32
-    
+  }
+  return result;
+}
