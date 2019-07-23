@@ -1,2 +1,223 @@
-/* Your styles goes here */
+:root {
+    --main-color: dodgerblue;
+    --secondary-color: darkgrey;
+    --dark-color: black;
+    --light-grey: #ccc
+}
 
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 60%;
+    margin: auto;
+}
+
+h1 {
+    margin-top: 2rem;
+    color: var(--main-color);
+    font-size: 3rem;
+}
+
+.addItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+    width: 100%;
+}
+
+.addItem input[type="text"] {
+    padding: 1.5rem;
+    width: inherit;
+    border-radius: .5rem;
+    border: 1px solid var(--secondary-color);
+    outline: none;
+}
+
+.addItem input[type="text"]:focus {
+    color: var(--dark-color);
+    border: 1px solid var(--main-color);
+}
+
+button {
+    border: none;
+    background: transparent;
+    font-size: 4rem;
+    color: var(--main-color);
+    margin: 0 1rem;
+}
+
+.addItem button {
+    margin-left: 2rem;
+    border: none;
+    background: transparent;
+    font-size: 4rem;
+    color: var(--secondary-color);
+}
+
+button:not(:disabled):hover {
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.addItem button:focus {
+    outline: none;
+}
+
+hr {
+    width: 100%;
+    height: 1rem;
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+    opacity: 0.2;
+    box-shadow: 0 1px 2px var(--dark-color);
+    margin-bottom: 4rem;
+}
+
+.listItems {
+    width: 100%;
+    list-style: none;
+    font-size: 2rem;
+}
+
+.listItems .material-icons {
+    font-size: 3rem;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: inherit;
+    position: relative;
+    color: var(--main-color);
+    /* border: 1px solid red; */
+}
+
+.delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.editPanel {
+    display: flex;
+    width: 100%;
+}
+
+.item input[type="text"] {
+    align-self: center;
+    padding: 1rem;
+    width: 30%;
+    border-radius: .5rem;
+    border: 1px solid var(--secondary-color);
+    outline: none;
+}
+
+.item input[type="text"]:focus {
+    color: var(--dark-color);
+    border: 1px solid var(--main-color);
+}
+
+.item button {
+    color: rgba(30, 143, 255, 0.5);
+}
+
+.item button:not(:disabled):hover {
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.item button:focus {
+    outline: none;
+}
+
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 3.5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: .2rem;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input~.checkmark {
+    background-color: var(--light-grey);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked~.checkmark {
+    background-color: var(--main-color);
+    opacity: .3;
+    cursor: not-allowed;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: .9rem;
+    top: .3rem;
+    width: .5rem;
+    height: 1.5rem;
+    border: solid white;
+    border-width: 0 2px 3px 0;
+    transform: rotate(45deg);
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
