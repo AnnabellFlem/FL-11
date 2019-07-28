@@ -1,0 +1,100 @@
+:root {
+    --main-color: dodgerblue;
+    --secondary-color: darkgrey;
+    --dark-color: black;
+    --light-grey: #ccc
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 60%;
+    margin: auto;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: inherit;
+}
+
+h1,
+h2 {
+    margin-top: 2rem;
+    color: var(--main-color);
+    font-size: 3rem;
+}
+
+button {
+    background-color: dodgerblue;
+    border: none;
+    color: white;
+    margin: 1rem 1rem;
+    padding: .5rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+h3,
+p {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+input {
+    margin: 2rem;
+}
+
+.delete {
+    background-color: red;
+}
+
+.btn-save {
+    background-color: green;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#alert {
+    position: relative;
+    background-color: var(--light-grey);
+    position: absolute;
+}
+
+.alert-close {
+    position: absolute;
+    background-color: red;
+    right: 0;
+    top: 0;
+}
